@@ -1,7 +1,7 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("userinput");
-var ul = document.querySelector("ul");
-var deleteButtons = document.getElementsByClassName("delete");
+const button = document.getElementById("enter");
+let input = document.getElementById("userinput");
+let ul = document.querySelector("ul");
+let deleteButtons = document.getElementsByClassName("delete");
 
 function inputLength() {
 	return input.value.length;
@@ -9,11 +9,11 @@ function inputLength() {
 
 function createListElement() {
 	//creates new list item delete button
-	var btn = document.createElement("button");
+	let btn = document.createElement("button");
 	btn.innerHTML = "delete";
 	btn.addEventListener("click", deleteItem);
 
-	var li = document.createElement("li");
+	let li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	li.appendChild(btn);
 
@@ -45,7 +45,7 @@ function getEventTarget(e) {
 }
 
 function toggleDone(event) {
-	var target = getEventTarget(event);
+	let target = getEventTarget(event);
 	target.classList.toggle("done");
 }
 
@@ -56,7 +56,7 @@ function deleteItem(event) {
 }
 
 //adds event listeners to all the buttons and clickable items.
-for (var i = 0; i < ul.children.length; i++) {
+for (let i = 0; i < ul.children.length; i++) {
 	deleteButtons[i].addEventListener("click", deleteItem);
 }
 
